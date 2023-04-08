@@ -33,7 +33,7 @@ const int FIVE_MINUTES = 300;
 
 //int prevButtonState = 0;
 const int twoSeconds = 2;
-static unsigned int time = 0;
+static unsigned int time = 301;
 
 
 void setup() {
@@ -62,7 +62,7 @@ void loop() {
 
 
   //if (on && (now - lastSampleTime >= fiveMinutes)) {
-  if (time > twoSeconds) {
+  if (time > FIVE_MINUTES) {
     Serial.print("Sensor value: ");
     int quality = sensor.slope();
     Serial.println("sensor.getValue()");
@@ -145,7 +145,7 @@ void loop() {
           delay(10000);
         }
     }*/
-  delay(2000);
+  delay(1000);
   time += 1;
   Serial.println();
 }
